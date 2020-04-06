@@ -421,7 +421,7 @@ func (c *Consumer) GetRequestTokenAndUrlWithParams(callbackUrl string, additiona
 	for k, v := range c.AdditionalAuthorizationUrlParams {
 		loginParams.Set(k, v)
 	}
-	loginParams.Set(TOKEN_PARAM, requestToken.Token)
+	loginParams.Set("token", requestToken.Token)
 
 	loginUrl = c.serviceProvider.AuthorizeTokenUrl + "?" + loginParams.Encode()
 
